@@ -1,0 +1,64 @@
+from torch.utils.data import Dataset, DataLoader
+from transformers import BertTokenizer
+import pandas as pd
+import torch
+import numpy as np
+
+class traindataset(Dataset):
+    def __init__(self, root):
+        super(traindataset, self).__init__()
+        self.root = root
+        df = pd.read_csv(self.root, delimiter='\t')
+        self.sentences = df.review
+        self.targets = df.sentiment
+
+
+        self.tar_encoder_board = np.array([[0,1],[1,0]])
+
+
+    def __getitem__(self, item):
+        ids = ['[MASK]' for i in range(512)]
+        tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+        tpkens = tokenizer.tokenize(self.sentences[item])
+        tokens = ['[CLS]'] + tpkens + ['[SEP]']
+        tokens_ids = tokenizer.convert_tokens_to_ids(tokens)
+        ids = tokenizer.convert_tokens_to_ids(ids)
+        tar = self.tar_encoder_board[self.targets[item]]
+        if len(tokens_ids) <= 512: #由于数据集中可能存在超出Bert-base-uncased位置嵌入数量的大小（512），因此这里只截取评论中前512个词（一般评论中前512个词完全能够包含情感的正负信息）
+            ids[:len(tokens_ids)] = tokens_ids
+        else:
+            ids = tokens_ids[:512]
+
+        return torch.tensor(ids), torch.tensor(tar,dtype=torch.float32)
+
+    def __len__(self):
+        return len(self.targets)
+
+class evaldataset(Dataset):
+    def __init__(self, root):
+        super(evaldataset, self).__init__()
+        self.root = root
+        df = pd.read_csv(self.root,delimiter='\t')
+        self.sentences = df.review
+        self.targets = df.sentiment
+
+        self.tar_encoder_board = np.array([[0,1],[1,0]])
+
+
+    def __getitem__(self, item):
+        ids = ['[MASK]' for i in range(512)]
+        tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+        tpkens = tokenizer.tokenize(self.sentences[item])
+        tokens = ['[CLS]'] + tpkens + ['[SEP]']
+        tokens_ids = tokenizer.convert_tokens_to_ids(tokens)
+        ids = tokenizer.convert_tokens_to_ids(ids)
+        tar = self.tar_encoder_board[self.targets[item]]
+        if len(tokens_ids) <= 512: 
+            ids[:len(tokens_ids)] = tokens_ids
+        else:
+            ids = tokens_ids[:512]
+
+        return torch.tensor(ids), torch.tensor(tar,dtype=torch.float32)
+
+    def __len__(self):
+        return len(self.targets)
