@@ -1,0 +1,48 @@
+from transformers import AutoTokenizer, AutoModelForSequenceClassification, BertModel, BertTokenizer
+import torch
+import torch.nn as nn
+import loralib as lora
+
+class Bert_cls(nn.Module):
+    def __init__(self):
+        super(Bert_cls, self).__init__()
+        self.Bert = AutoModelForSequenceClassification.from_pretrained("bert-base-uncased")#使用Huggingface自带的句子分类模型
+        self.pre_classifier = nn.Linear(768, 768)
+        self.dropout = nn.Dropout(0.1)
+        self.classifier = nn.Linear(768, 2)
+        self.relu = nn.ReLU()
+        self.softmax = nn.Softmax(dim=1)
+
+    def forward(self, x):
+        out = self.Bert(x)
+        #如果不想用Huggingface自带的句子分类模型，这里可以自定义前馈层的网络结构。
+        # out = self.pre_classifier(out.pooler_output)
+        # out = self.pre_classifier(out)
+        # out = self.relu(out)
+        # out = self.dropout(out)
+        # out = self.classifier(out)
+        # out = self.softmax(out)
+
+        return out.logits
+
+
+
+
+if __name__ == '__main__':
+    model = Bert_cls()
+    tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+
+    snetence = 'I am not happy aing'
+    tpkens = tokenizer.tokenize(snetence)
+    tokens = ['[CLS]'] + tpkens + ['[SEP]']
+    # tokens = tokens + ['[PAD]'] + ['[PAD]']
+
+    tokens_ids = tokenizer.convert_tokens_to_ids(tokens)
+    attention_mask = [1 if i != '[PAD]' else 0 for i in tokens]
+
+    tokens_ids = torch.tensor(tokens_ids).unsqueeze(0)
+    pre = model(tokens_ids)
+    print(pre.logits.argmax(1).item())
+    # max_ids = torch.argmax(last_hidden_state[0],dim=0)
+    # pre_words = tokenizer.convert_ids_to_tokens(max_ids)
+    # print(max_ids)
