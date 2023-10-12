@@ -1,5 +1,5 @@
 # Bert-Sentiment-Classification
-Fine turning of Bert-base-uncased based on Amazon Customer Reviews
+Fine turning of Bert-base-uncased based on Amazon Customer Reviews（Updating...)
 
 1.模型选择：为了完成电商评论中的情感分类任务，我们的一个问题是：我们应该用哪个模型呢？
 由于情感分类输入NLU任务，而目前拥抱脸在transformer库中已经搭载了很多预训练好的BERT模型，因此，为了节约成本和降低训练难度，这里我们选用transformer库中的Bert-base-uncased模型进行微调和推理。
