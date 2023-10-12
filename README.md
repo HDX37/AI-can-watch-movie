@@ -43,7 +43,8 @@ Bert-base-uncased 模型在transformer库中有许多不同的版本，如下图
   
 5.训练完毕:大家训练完毕后可自行输入对话进行测试，第一次实现还是蛮有成就感的~
 
-![image](https://github.com/HDX37/Bert-Sentiment-Classification/assets/128899278/99a29f0b-c95b-4220-9c80-b00100031ea3)
+![image](https://github.com/HDX37/Bert-Sentiment-Classification/assets/128899278/fbe85c5d-7ac9-47b4-a034-81d00be09b37)
+
 
 
 
