@@ -10,6 +10,23 @@ Bert-base-uncased 模型在transformer库中有许多不同的版本，如下图
 
 从图片中我们可以看到，transformer库中自带了用于不同任务的Bert模型，由于我们要实现的情感分类属于句子分类任务中的一种，因此这里我们选择"BertForSequenceClassification"作为本次任务的推理模型。
 
+模型结构如下图所示：
+
+①Bert输入部分：
+
+![image](https://github.com/HDX37/Bert-Sentiment-Classification/assets/128899278/474d38ee-ba7f-488d-898f-d321b03f47e8)
+
+
+②Bert编码器部分：
+
+![image](https://github.com/HDX37/Bert-Sentiment-Classification/assets/128899278/10d2d8ce-40f3-4be6-95f8-99c1f0145004)
+
+
+③Bert前馈输出部分：
+
+![image](https://github.com/HDX37/Bert-Sentiment-Classification/assets/128899278/874d0dd2-13c1-4e28-88c2-c47125c9885d)
+
+
 2.预训练参数加载：Bert-base-uncased模型一共有1亿多个参数，因此，如果要从头训练该模型是十分困难的。好在拥抱脸团队已经为我们预训练了这个模型，不需要我们再从头对该模型进行训练。
 为了加载预训练好的模型参数，我们可以在工程目录下创建一个bert-base-uncased的文件夹，其结构如下图所示：
 
@@ -40,6 +57,7 @@ Bert-base-uncased 模型在transformer库中有许多不同的版本，如下图
 ④超参数设置：这里主要是学习率，本项目中学习了设置为1e-5。在该学习率下，用3090（12GB）训练1个小时（1个epcho）即可实现98%的准确率。
 
 解决方案：lr = 1e-5.
+
   
 5.训练完毕:大家训练完毕后可自行输入对话进行测试，第一次实现还是蛮有成就感的~
 
