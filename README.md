@@ -40,7 +40,7 @@ Fine turning of Bert-base-uncased based on Amazon Customer Reviews（Updating...
 
 解决方案：采用Lora微调技术。
 
-④超参数设置：这里主要是学习率，本项目中学习了设置为1e-5。在该学习率下，用3090（12GB）训练1个小时（1个epcho）即可实现98%的准确率。
+④超参数设置：这里主要是学习率，本项目中学习了设置为1e-5。在该学习率下，用3090（24GB）训练1个小时（1个epcho）即可实现98%的准确率。
 
 解决方案：lr = 1e-5.
 
