@@ -14,7 +14,8 @@ Bert-base-uncased 模型在transformer库中有许多不同的版本，如下图
 
 ①Bert输入部分：
 
-![image](https://github.com/HDX37/Bert-Sentiment-Classification/assets/128899278/474d38ee-ba7f-488d-898f-d321b03f47e8)
+![image](https://github.com/HDX37/Bert-Sentiment-Classification/assets/128899278/a990bb22-49f9-49a3-8704-80236ef59861)
+
 
 
 ②Bert编码器部分：
@@ -38,7 +39,7 @@ Bert-base-uncased 模型在transformer库中有许多不同的版本，如下图
 ![image](https://github.com/HDX37/Bert-Sentiment-Classification/assets/128899278/c9552053-fdb0-491f-aef5-87968aec0a1d)
 便可加载模型预训练参数。
 
-3.准备数据集：本次预训练用的数据集是来自Amazon电商平台的用户评论，数据集文件我已经放到项目当中，大家可自行提取。不过大家也可根据自己的实际任务更改训练用的数据集，不过不同的数据集文件里面的格式可能有所区别，更改数据集后Dataset里的代码也有做相应的调整。具体调整的细节如果有不懂的可私信我~
+3.准备数据集：本次预训练用的数据集是来自Amazon电商平台的用户评论和淘宝商户的评论，数据集文件我已经放到项目当中，大家可自行提取。不过大家也可根据自己的实际任务更改训练用的数据集，不过不同的数据集文件里面的格式可能有所区别，更改数据集后Dataset里的代码也有做相应的调整。具体调整的细节如果有不懂的可私信我~
 
 4.开始训练：这里重点讲一下训练过程中可能会出现的几个问题：
 
