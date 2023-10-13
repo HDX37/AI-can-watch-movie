@@ -40,7 +40,7 @@ Fine turning of Bert-base-uncased based on Amazon Customer Reviews（Updating...
 解决方案：lr = 1e-5.
 
   
-5.训练完毕:大家训练完毕后可自行输入对话进行测试，第一次实现还是蛮有成就感的~
+5.训练完毕:大家训练完毕后可自行输入对话进行测试。
 
 ![image](https://github.com/HDX37/Bert-Sentiment-Classification/assets/128899278/fec06342-d848-4a39-a464-c8d8033a779b)
 
