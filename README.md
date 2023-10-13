@@ -49,6 +49,9 @@ Fine turning of Bert-base-uncased based on Amazon Customer Reviews（Updating...
 
 ![image](https://github.com/HDX37/Bert-Sentiment-Classification/assets/128899278/fec06342-d848-4a39-a464-c8d8033a779b)
 
+![image](https://github.com/HDX37/Bert-Sentiment-Classification/assets/128899278/3036e57f-2c19-47c3-a2cd-ad12f43675e7)
+
+
 
 
 
