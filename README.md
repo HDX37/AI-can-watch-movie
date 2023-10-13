@@ -7,6 +7,8 @@ Fine turning of Bert-base-uncased based on Amazon Customer Reviews（Updating...
 
 从图片中我们可以看到，transformer库中自带了用于不同任务的Bert模型，由于我们要实现的情感分类属于句子分类任务中的一种，因此这里我们选择"BertForSequenceClassification"作为本次任务的推理模型。
 
+![image](https://github.com/HDX37/Bert-Sentiment-Classification/assets/128899278/02b4b796-6cef-471f-9311-c504f3231857)
+
 
 2.预训练参数加载：Bert-base-uncased模型一共有1亿多个参数，因此，如果要从头训练该模型是十分困难的。好在拥抱脸团队已经为我们预训练了这个模型，不需要我们再从头对该模型进行训练。
 为了加载预训练好的模型参数，我们可以在工程目录下创建一个bert-base-uncased的文件夹，其结构如下图所示：
@@ -20,6 +22,9 @@ Fine turning of Bert-base-uncased based on Amazon Customer Reviews（Updating...
 便可加载模型预训练参数。
 
 3.准备数据集：本次预训练用的数据集是来自Amazon电商平台的用户评论和淘宝用户的评论，数据集文件我已经放到项目当中，大家可自行提取。不过大家也可根据自己的实际任务更改训练用的数据集，不过不同的数据集文件里面的格式可能有所区别，更改数据集后Dataset里的代码也有做相应的调整。具体调整的细节如果有不懂的可私信我~
+
+![image](https://github.com/HDX37/Bert-Sentiment-Classification/assets/128899278/59deb279-ae9a-4d75-af00-212da93a8858)
+
 
 4.开始训练：这里重点讲一下训练过程中可能会出现的几个问题：
 
