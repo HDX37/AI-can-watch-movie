@@ -1,4 +1,4 @@
-![image](https://github.com/HDX37/Bert-Sentiment-Classification/assets/128899278/e3b64b19-6e27-4ece-9806-c695e10623c3)# AI may watch movie like humam
+# AI may watch movie like humam
 Fine turning of LLM and EasyOCR work with each other to ahieve this (Updating……)
 
 To enable AI to understand movies, we conducted tests using BERT and EasyOCR. The objective of this test was to enable AI to differentiate between drama movies and tragedy movies.
@@ -41,7 +41,7 @@ Via(root,language)
 Special thanks to the following individuals for their support and contributions to this project:
 
 - [HuggingFace](https://huggingface.co/)
-- [JaidedAI](link2)
+- [JaidedAI](https://github.com/JaidedAI/EasyOCR)
 
 We would like to thank everyone who provided feedback and support for this project.
 
