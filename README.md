@@ -40,9 +40,8 @@ Via(root,language)
 # Acknowledgements 
 Special thanks to the following individuals for their support and contributions to this project:
 
-- [HuggingFace](link1)
+- [HuggingFace](https://huggingface.co/)
 - [](link2)
-- [Contributor 3](link3)
 
 We would like to thank everyone who provided feedback and support for this project.
 
