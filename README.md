@@ -1,5 +1,5 @@
 # AI may watch movie like humam
-Fine turning of LLM and EasyOCR work with each other to ahieve this (Updating……)
+Fine turning of LLM and EasyOCR work with each other to ahieve this (Updating…… CODE WILL COME IN LATER)
 
 To enable AI to understand movies, we conducted tests using BERT and EasyOCR. The objective of this test was to enable AI to differentiate between drama movies and tragedy movies.
 
