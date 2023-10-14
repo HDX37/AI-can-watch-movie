@@ -37,17 +37,12 @@ language = 'En'
 Via(root,language)
 ```
 
-# 
-Special thanks to the following contributors for their support and contributions to this project:
+# Acknowledgements 
+Special thanks to the following individuals for their support and contributions to this project:
 
-- [Contributor 1](link1)
-- [Contributor 2](link2)
+- [HuggingFace](link1)
+- [](link2)
 - [Contributor 3](link3)
-
-We would also like to express our gratitude to the following individuals for their guidance and advice:
-
-- [Advisor 1](link1)
-- [Advisor 2](link2)
 
 We would like to thank everyone who provided feedback and support for this project.
 
